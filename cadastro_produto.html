@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de produto</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="assets/imagens/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <script>
+
+        function enviaMsg() {
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                console.log("readyState:" + this.readyState);
+                console.log("status:" + this.status);
+
+                if (this.readyState == 4 && this.status == 200) {
+                    imprimeResposta(this);
+                }
+            };
+
+            xhttp.onload = function () {
+                document.getElementById("resposta").innerHTML = this.responseText;
+            };
+
+            document.getElementById("saida").innerHTML = "Produto cadastrado com sucesso!";
+            var data = {
+                "produto": document.getElementById("produto").value,
+                "categoria": document.getElementById("categoria").value,
+                "valor": document.getElementById("valor").value
+
+            };
+            var jsondata = JSON.stringify(data);
+            var url = "https://eosm7neya7.execute-api.us-east-1.amazonaws.com/KnockProdutos";
+            xhttp.open("POST", url);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhttp.send(jsondata);
+        }
+
+        function imprimeResposta(xml) {
+            var xmlDoc = xml.responseXML;
+            document.getElementById("resposta").innerHTML = xmlDoc;
+        }
+    </script>
+
+    <div class="container">
+        <div class="column">
+
+            <div class="menu">
+                <div id="menu-bar">
+                    <div id="menu" onclick="onClickMenu()">
+                        <div id="bar1" class="bar"></div>
+                        <div id="bar2" class="bar"></div>
+                        <div id="bar3" class="bar"></div>
+
+                    </div>
+                    <ul class="nav" id="nav">
+                        <div class="icon-link">
+                            <i class="ri-login-box-line menu-icon"></i>
+                            <li><a href="http://knock-login.s3-website-us-east-1.amazonaws.com" class="a-menu">Login</a></li>
+                        </div>
+                        
+                        <div class="icon-link">
+                            <i class="ri-user-add-line menu-icon"></i>
+                            <li><a href="http://knock-cadastre-se.s3-website-us-east-1.amazonaws.com" class="a-menu">Cadastre-se</a></li>
+                        </div>
+
+                        <div class="icon-link">
+                            <i class="ri-newspaper-line menu-icon"></i>
+                            <li><a href="http://knock-sobre.s3-website-us-east-1.amazonaws.com" class="a-menu">Sobre</a></li>
+                        </div>
+
+                        <div class="icon-link">
+                            <i class="ri-auction-line menu-icon"></i>
+                            <li><a href="http://knock-lances.s3-website-us-east-1.amazonaws.com" class="a-menu">Dar lance</a></li>
+                        </div>
+
+                        <div class="icon-link">
+                            <i class="ri-chat-3-line menu-icon"></i>
+                            <li><a href="http://knock-contato.s3-website-us-east-1.amazonaws.com" class="a-menu">Contato</a></li>
+                        </div>
+                    </ul>
+
+                </div>
+                <div class="menu-bg" id="menu-bg"></div>
+                <script>
+
+                    function onClickMenu() {
+                        document.getElementById("menu").classList.toggle("change");
+                        document.getElementById("nav").classList.toggle("change");
+                        document.getElementById("menu-bg").classList.toggle("change-bg")
+                    }
+
+                </script>
+
+            </div>
+
+            <div class="logo">
+                <img src="assets/imagens/logo.png" alt="logo">
+                <h2 class="title">Lance</h2>
+            </div>
+            <form class="form" method="post">
+                <p id="saida">Preencha os campos para cadastrar</p>
+
+                <div class="div-input">
+                    <label class="label-input" for="produto">
+                        <input type="text" id="produto" class="produto-lance" name="produto" size="20" maxlength="100"
+                            placeholder="Produto" required>
+                    </label>
+                </div>
+
+                <div class="div-input">
+                    <label class="label-input" for="categoria">
+                        <input type="text" id="categoria" class="categoria" name="categoria" size="20" maxlength="100"
+                            placeholder="Categoria" required>
+                    </label>
+
+                    <label class="label-input" for="valor">
+                        <input type="text" maxlength="9" id="valor" class="valor" name="valor" size="20"
+                            placeholder="Preço inicial (R$)" required onkeyup="k(this);">
+
+                        <script>
+                            function k(i) {
+                                var v = i.value.replace(/\D/g, '');
+                                v = (v / 100).toFixed(2) + '';
+                                v = v.replace(".", ",");
+                                v = v.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
+                                v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
+                                i.value = v;
+                            }
+                        </script>
+
+                    </label>
+                </div>
+
+                <button type="button" onclick="enviaMsg()" class="btn">Cadastrar<i class="ri-add-circle-line button-icon"></i></button>
+
+                <div class="resposta">
+                    Resposta:
+                    <br>
+                    <span id="resposta">---------</span>
+                </div>
+
+        </div>
+
+        </form>
+
+    </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- http://knock-cadastro-produto.s3-website-us-east-1.amazonaws.com -->

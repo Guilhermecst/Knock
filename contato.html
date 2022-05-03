@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contato</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="assets/imagens/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <script type="text/javascript">
+
+        function fMasc(objeto, mascara) {
+            obj = objeto
+            masc = mascara
+            setTimeout("fMascEx()", 1)
+        }
+        function fMascEx() {
+            obj.value = masc(obj.value)
+        }
+        function mTel(tel) {
+            tel = tel.replace(/\D/g, "")
+            tel = tel.replace(/^(\d)/, "($1")
+            tel = tel.replace(/(.{3})(\d)/, "$1) $2")
+            if (tel.length == 9) {
+                tel = tel.replace(/(.{1})$/, "-$1")
+            } else if (tel.length == 10) {
+                tel = tel.replace(/(.{2})$/, "-$1")
+            } else if (tel.length == 11) {
+                tel = tel.replace(/(.{3})$/, "-$1")
+            } else if (tel.length == 12) {
+                tel = tel.replace(/(.{4})$/, "-$1")
+            } else if (tel.length > 12) {
+                tel = tel.replace(/(.{4})$/, "-$1")
+            }
+            return tel;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="menu buttons-top">
+        <div id="menu-bar">
+            <div id="menu" onclick="onClickMenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+
+            </div>
+            <ul class="nav" id="nav">
+                <div class="icon-link">
+                    <i class="ri-login-box-line menu-icon"></i>
+                    <li><a href="http://knock-login.s3-website-us-east-1.amazonaws.com" class="a-menu">Login</a></li>
+                </div>
+                
+                <div class="icon-link">
+                    <i class="ri-user-add-line menu-icon"></i>
+                    <li><a href="http://knock-cadastre-se.s3-website-us-east-1.amazonaws.com" class="a-menu">Cadastre-se</a></li>
+                </div>
+
+                <div class="icon-link">
+                    <i class="ri-newspaper-line menu-icon"></i>
+                    <li><a href="http://knock-sobre.s3-website-us-east-1.amazonaws.com" class="a-menu">Sobre</a></li>
+                </div>
+
+                <div class="icon-link">
+                    <i class="ri-auction-line menu-icon"></i>
+                    <li><a href="http://knock-lances.s3-website-us-east-1.amazonaws.com" class="a-menu">Dar lance</a></li>
+                </div>
+
+                <div class="icon-link">
+                    <i class="ri-chat-3-line menu-icon"></i>
+                    <li><a href="http://knock-contato.s3-website-us-east-1.amazonaws.com" class="a-menu">Contato</a></li>
+                </div>
+            </ul>
+
+        </div>
+        <div class="menu-bg" id="menu-bg"></div>
+
+        <script>
+
+            function onClickMenu() {
+                document.getElementById("menu").classList.toggle("change");
+                document.getElementById("nav").classList.toggle("change");
+                document.getElementById("menu-bg").classList.toggle("change-bg")
+            }
+
+        </script>
+
+    </div>
+    </div>
+
+    <div class="container">
+
+        <div class="column contact">
+
+            <div class="logo">
+                <img src="assets/imagens/logo.png" alt="logo">
+                <h2 class="title">Contato</h2>
+            </div>
+            <form method="POST" class="form">
+
+                <div class="div-input">
+                    <label class="label-input" for="nome">
+                        <input type="text" id="nome" class="nome" name="nome" size="20" maxlength="100"
+                            placeholder="Nome" required>
+                    </label>
+                </div>
+
+                <div class="div-input">
+                    <label class="label-input" for="email">
+                        <input type="email" id="email" class="email-lance" name="email" size="20" maxlength="100"
+                            placeholder="Seu e-mail" required>
+                    </label>
+                </div>
+
+
+                <div class="div-input">
+                    <label for="mensagem">
+                        <textarea name="mensagem" id="mensagem" required cols="0" rows="7" class="contact_input"
+                            placeholder="Digite sua mensagem..."></textarea>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn">Enviar<i class="ri-send-plane-2-line button-icon"></i></i></button>
+
+            </form><br>
+
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/silva-guilherme-costa/" class="icon" target="_blank"><i class="ri-linkedin-line"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=+5511932905813&text=Olá Guilherme!" class="icon" target="_blank"><i class="ri-whatsapp-line"></i></a>
+            <a href="https://github.com/Guilhermecst" class="icon"><i class="ri-github-line" target="_blank"></i></a>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

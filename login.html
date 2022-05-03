@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login_sobre.css">
+    <link rel="shortcut icon" href="assets/imagens/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="column">
+
+            <div class="menu">
+                <div id="menu-bar">
+                    <div id="menu" onclick="onClickMenu()">
+                        <div id="bar1" class="bar"></div>
+                        <div id="bar2" class="bar"></div>
+                        <div id="bar3" class="bar"></div>
+
+                    </div>
+                    <ul class="nav" id="nav">
+                        <div class="icon-link">
+                            <i class="ri-login-box-line menu-icon"></i>
+                            <li><a href="http://knock-login.s3-website-us-east-1.amazonaws.com" class="a-menu">Login</a></li>
+                        </div>
+
+                        <div class="icon-link">
+                            <i class="ri-user-add-line menu-icon"></i>
+                            <li><a href="http://knock-cadastre-se.s3-website-us-east-1.amazonaws.com" class="a-menu">Cadastre-se</a>
+                            </li>
+                        </div>
+
+                        <div class="icon-link">
+                            <i class="ri-newspaper-line menu-icon"></i>
+                            <li><a href="http://knock-sobre.s3-website-us-east-1.amazonaws.com" class="a-menu">Sobre</a></li>
+                        </div>
+
+                        <div class="icon-link">
+                            <i class="ri-auction-line menu-icon"></i>
+                            <li><a href="http://knock-lances.s3-website-us-east-1.amazonaws.com" class="a-menu">Dar lance</a></li>
+                        </div>
+
+                        <div class="icon-link">
+                            <i class="ri-chat-3-line menu-icon"></i>
+                            <li><a href="http://knock-contato.s3-website-us-east-1.amazonaws.com" class="a-menu">Contato</a></li>
+                        </div>
+                    </ul>
+
+                </div>
+                <div class="menu-bg" id="menu-bg"></div>
+                <script>
+
+                    function onClickMenu() {
+                        document.getElementById("menu").classList.toggle("change");
+                        document.getElementById("nav").classList.toggle("change");
+                        document.getElementById("menu-bg").classList.toggle("change-bg")
+                    }
+
+                </script>
+
+            </div>
+
+            <div class="logo">
+                <img src="assets/imagens/logo.png" alt="logo">
+                <h2 class="title">Login</h2>
+            </div>
+
+            <form class="form">
+                <label for="">
+                    <input class="email" type="email" maxlength="100" placeholder="E-mail" required>
+                </label>
+                <label for="">
+                    <input class="senha" type="password" placeholder="Senha" required>
+                    <div class="cad-esq">
+                        <a class="cadastre-se"
+                            href="http://knock-cadastre-se.s3-website-us-east-1.amazonaws.com">Cadastre-se</a>
+                        <a class="esqueceu-senha" href="">Esqueceu a senha?</a>
+                    </div>
+                    <p class="entre-rede-social">Entre com sua rede social</p>
+                    <div class="login-rede-social">
+                        <a href="" class="icon-entre"><i class="ri-facebook-line"></i></a>
+                        <p>ou</p>
+                        <a href="" class="icon-entre"><i class="ri-google-line"></i></a>
+                    </div>
+                </label>
+                <a href="http://knock-lances.s3-website-us-east-1.amazonaws.com" class="btn">Entrar<i
+                        class="ri-login-box-line button-icon"></i></a>
+            </form>
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/silva-guilherme-costa/" class="icon" target="_blank"><i
+                    class="ri-linkedin-line"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=+5511932905813&text=Olá Guilherme!" class="icon"
+                target="_blank"><i class="ri-whatsapp-line"></i></a>
+            <a href="https://github.com/Guilhermecst" class="icon"><i class="ri-github-line" target="_blank"></i></a>
+        </div>
+
+    </div>
+</body>
+
+</html>
