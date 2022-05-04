@@ -10,7 +10,7 @@ URL: http://knock-login.s3-website-us-east-1.amazonaws.com/
 
 
 # Página de Login 🚪
-![image](https://user-images.githubusercontent.com/80990667/166740804-c3c532b4-a060-44ef-bed3-5fe8491c5eed.png)
+![image](https://user-images.githubusercontent.com/80990667/166771308-6cf2875b-4557-439f-8861-a8b3c2ea792e.png)
 
 # Página de Cadastro ➕
 ![image](https://user-images.githubusercontent.com/80990667/166741738-718f5dbe-c8bf-443d-bdbd-1b7dd19799c1.png)
