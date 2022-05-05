@@ -221,7 +221,7 @@ body {
     width: 100%;
 }
 
-.form input, select{
+.form input {
     height: 36px;
     width: 100%;
     border: none;
@@ -243,21 +243,6 @@ input:hover {
     box-shadow: 0 0 10px 2px #1DB954;
 }
 
-select {
-    border-radius: 6px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-family: 'Poppins', sans-serif;
-}
-
-select:hover {
-    box-shadow: 0 0 10px 2px #1DB954;
-}
-
-.form select:focus {
-    box-shadow: 0 0 10px 2px #1DB954;
-}
-
 
 textarea {
     border-radius: 6px;
@@ -275,8 +260,7 @@ textarea:hover {
 }
 
 textarea:focus,
-input:focus,
-select:focus {
+input:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
 }
@@ -318,11 +302,41 @@ label {
     margin-top: 8px;
 }
 
+.cad-produto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cad-produto p {
+    color: #1DB954;
+}
+
+.cad-produto a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.cad-produto a:hover {
+    color: #1DB954;
+}
+
 /*VERSÃO MOBILE*/
 @media screen and (max-width: 1040px) {
 
     .column {
         width: 90%;
+    }
+
+    label {
+        margin: 4px;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .logo img {
@@ -361,7 +375,7 @@ label {
     }
 
     .btn-lance {
-        width: 40%;
+        width: 50.7%;
     }
 
     .btn-cadastrar {
@@ -381,14 +395,28 @@ label {
         width: 100%;
     }
 
-    .cadastro input, select {
+    .cadastro input {
         height: 22px;
+    }
+
+    .cad-produto p, a {
+        font-size: small;
     }
 
     @media screen and (max-width: 425px) {
 
         .column {
             width: 90%;
+        }
+
+        label {
+            margin: 4px;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     
         .logo img {
@@ -443,9 +471,14 @@ label {
             width: 100%;
         }
 
-        .cadastro input, select {
+        .cadastro input {
             height: 22px;
         }
+
+        .cad-produto p, a {
+            font-size: small;
+        }
+
     }
 }
 
@@ -471,4 +504,16 @@ label {
 .icon:hover {
     background-color: #fff;
     box-shadow: 0 0 10px 2px #1DB954;
+}
+
+.label-senha {
+    display: flex;
+    align-items: center;
+}
+
+.bi, .bi-eye-slash {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    margin-bottom: 7px;
 }
