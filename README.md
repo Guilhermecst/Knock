@@ -14,13 +14,11 @@ link do projeto: https://lnkd.in/dYHaJsrH
 # Página de Login 🚪
 ![image](https://user-images.githubusercontent.com/80990667/166771308-6cf2875b-4557-439f-8861-a8b3c2ea792e.png)
 
+# Página de Cadastro de Usuários ➕
+![image](https://user-images.githubusercontent.com/80990667/167036002-afef2e55-9ab4-4d77-a18e-c38902b0264a.png)
+
 # Página de Cadastro de Produtos 💻
-
 ![image](https://user-images.githubusercontent.com/80990667/167034404-cce67186-5947-4fb7-91c0-a430802ee1ff.png)
-
-
-# Página de Cadastro ➕
-![image](https://user-images.githubusercontent.com/80990667/167034559-976eb19f-a9b3-4b63-81cf-cc69dd2c56be.png)
 
 # Página de Lances 🪧 e menu hamburguer 🍔
 ![image](https://user-images.githubusercontent.com/80990667/166800582-d801db25-76de-4771-87f3-28c010099210.png)
