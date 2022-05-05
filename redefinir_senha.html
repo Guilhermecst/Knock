@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="assets/imagens/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <title>Login</title>
+    <title>Redefinir senha</title>
 </head>
 
 <body>
@@ -74,45 +74,47 @@
 
             <div class="logo">
                 <img src="assets/imagens/logo.png" alt="logo">
-                <h2 class="title">Login</h2>
+                <h2 class="title">Redefinir senha</h2>
             </div>
 
             <form class="form">
                 <label for="">
-                    <input class="email" type="email" maxlength="100" placeholder="E-mail" required>
+                    <input class="email" type="email" maxlength="100" placeholder="informe seu e-mail" required>
                 </label>
-                <label style="position: relative;">
-                    <input type="password" name="password" id="password" placeholder="Senha" />
-                    <i class="bi bi-eye-slash eye-login" id="togglePassword"></i>
+                <label for="" class="label-senha" style="position: relative;">
+                    <input type="password" name="password" id="password1" placeholder="Nova senha"/>
+                    <i class="bi bi-eye-slash" id="togglePassword1"></i>
+                </label>
+                <label for="" class="label-senha" style="position: relative;">
+                    <input type="password" name="password" id="password2" placeholder="Confirme a nova senha"/>
+                    <i class="bi bi-eye-slash" id="togglePassword2"></i>
+
 
                     <script>
+                        const togglePassword1 = document.querySelector('#togglePassword1');
+                        const password1 = document.querySelector('#password1');
+                        togglePassword1.addEventListener('click', function (e) {
 
-                        const togglePassword = document.querySelector('#togglePassword');
-                        const password = document.querySelector('#password');
-                        togglePassword.addEventListener('click', function (e) {
-
-                            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                            password.setAttribute('type', type);
+                            const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+                            password1.setAttribute('type', type);
 
                             this.classList.toggle('bi-eye');
                         });
 
+                        const togglePassword2 = document.querySelector('#togglePassword2');
+                        const password2 = document.querySelector('#password2');
+                        togglePassword2.addEventListener('click', function (e) {
+
+                            const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+                            password2.setAttribute('type', type);
+
+                            this.classList.toggle('bi-eye');
+                        });
                     </script>
 
-                    <div class="cad-esq">
-                        <a class="cadastre-se"
-                            href="http://knock-cadastre-se.s3-website-us-east-1.amazonaws.com">Cadastre-se</a>
-                        <a class="esqueceu-senha" href="http://knock-redefinir-senha.s3-website-us-east-1.amazonaws.com">Esqueceu a senha?</a>
-                    </div><br>
-                    <p class="entre-rede-social">Entre com sua rede social</p>
-                    <div class="login-rede-social">
-                        <a href="" class="icon-entre"><i class="ri-facebook-fill"></i></a>
-                        <p>ou</p>
-                        <a href="" class="icon-entre"><i class="ri-google-fill"></i></a>
-                    </div>
                 </label>
-                <a href="http://knock-lances.s3-website-us-east-1.amazonaws.com" class="btn">Entrar<i
-                        class="ri-login-box-line button-icon"></i></a>
+                <a href="http://knock-lances.s3-website-us-east-1.amazonaws.com" class="btn">Redefinir<i
+                        class="ri-lock-2-line button-icon"></i></a>
             </form>
         </div>
 

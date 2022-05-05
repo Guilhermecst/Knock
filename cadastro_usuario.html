@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="shortcut icon" href="assets/imagens/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 </head>
 
 <body>
@@ -38,7 +38,6 @@
                 "dataNasc": document.getElementById("dataNasc").value,
                 "email": document.getElementById("email").value,
                 "telefone": document.getElementById("telefone").value,
-                "genero": document.getElementById("genero").value,
                 "nacionalidade": document.getElementById("nacionalidade").value,
                 "cpf": document.getElementById("cpf").value,
                 "cep": document.getElementById("cep").value,
@@ -288,16 +287,6 @@
                 </div>
 
                 <div class="div-input">
-                    <label class="label-input" for="genero">
-                        <select id="genero" class="genero" required>
-                            <option value="default">Gênero</option>
-                            <option value="homem-cis">Homem cis</option>
-                            <option value="mulher-cis">Mulher cis</option>
-                            <option value="Homem-trans">Homem trans</option>
-                            <option value="mulher-trans">Mulher trans</option>
-                            <option value="nenhum">Prefiro não dizer</option>
-                        </select>
-                    </label>
                     <label class="label-input" for="nacionalidade">
                         <input type="text" id="nacionalidade" class="nacionalidade" maxlength="25"
                             placeholder="Nacionalidade" required>
@@ -338,12 +327,38 @@
                         <input name="bairro" type="text" id="bairro" class="bairro" size="40" placeholder="Bairro" />
                     </label>
                 </div>
-                <label>
-                    <input name="senha" type="password" id="senha" class="senha" size="40" placeholder="Senha" />
+                <label class="label-senha" style="position: relative;">
+                    <input type="password" name="senha" id="senha" placeholder="Senha" />
+                    <i class="bi bi-eye-slash" id="togglePassword"></i>
+
+                    <script>
+
+                        const togglePassword = document.querySelector('#togglePassword');
+                        const password = document.querySelector('#senha');
+                        togglePassword.addEventListener('click', function (e) {
+
+                            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                            password.setAttribute('type', type);
+
+                            this.classList.toggle('bi-eye');
+                        });
+
+                    </script>
+
                 </label>
 
-                <button type="button" onclick="enviaMsg()" class="btn btn-cadastrar">Cadastrar<i
-                        class="ri-user-add-line button-icon"></i></button>
+                <button type="button" id="recarregar" onclick="enviaMsg()" class="btn btn-cadastrar">Cadastrar<i
+                        class="ri-user-add-line button-icon"></i>
+                    <script>
+                        var btn = document.querySelector("#recarregar");
+                        btn.addEventListener("click", function () {
+
+                            setTimeout(function () {
+                                window.location.reload(1);
+                            }, 2300);
+                        });
+                    </script>
+                </button>
 
                 <div class="resposta">
                     Resposta:

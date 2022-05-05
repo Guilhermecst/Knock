@@ -63,7 +63,7 @@
                 document.getElementById("resposta").innerHTML = this.responseText;
             };
 
-            document.getElementById("saida").innerHTML = "Cradastro realizado com sucesso!";
+            document.getElementById("saida").innerHTML = "Lance efetuado!";
             var data = {
                 "nome": document.getElementById("nome").value,
                 "email": document.getElementById("email").value,
@@ -99,27 +99,32 @@
                     <ul class="nav" id="nav">
                         <div class="icon-link">
                             <i class="ri-login-box-line menu-icon"></i>
-                            <li><a href="http://knock-login.s3-website-us-east-1.amazonaws.com" class="a-menu">Login</a></li>
+                            <li><a href="http://knock-login.s3-website-us-east-1.amazonaws.com" class="a-menu">Login</a>
+                            </li>
                         </div>
-                        
+
                         <div class="icon-link">
                             <i class="ri-user-add-line menu-icon"></i>
-                            <li><a href="http://knock-cadastre-se.s3-website-us-east-1.amazonaws.com" class="a-menu">Cadastre-se</a></li>
+                            <li><a href="http://knock-cadastre-se.s3-website-us-east-1.amazonaws.com"
+                                    class="a-menu">Cadastre-se</a></li>
                         </div>
 
                         <div class="icon-link">
                             <i class="ri-newspaper-line menu-icon"></i>
-                            <li><a href="http://knock-sobre.s3-website-us-east-1.amazonaws.com" class="a-menu">Sobre</a></li>
+                            <li><a href="http://knock-sobre.s3-website-us-east-1.amazonaws.com" class="a-menu">Sobre</a>
+                            </li>
                         </div>
 
                         <div class="icon-link">
                             <i class="ri-auction-line menu-icon"></i>
-                            <li><a href="http://knock-lances.s3-website-us-east-1.amazonaws.com" class="a-menu">Dar lance</a></li>
+                            <li><a href="http://knock-lances.s3-website-us-east-1.amazonaws.com" class="a-menu">Dar
+                                    lance</a></li>
                         </div>
 
                         <div class="icon-link">
                             <i class="ri-chat-3-line menu-icon"></i>
-                            <li><a href="http://knock-contato.s3-website-us-east-1.amazonaws.com" class="a-menu">Contato</a></li>
+                            <li><a href="http://knock-contato.s3-website-us-east-1.amazonaws.com"
+                                    class="a-menu">Contato</a></li>
                         </div>
                     </ul>
 
@@ -187,7 +192,24 @@
                     </label>
                 </div>
 
-                <button type="button" onclick="enviaMsg()" class="btn btn-lance">Dar lance!<i class="ri-auction-line button-icon"></i></button>
+                <button type="button" id="recarregar" onclick="enviaMsg()" class="btn btn-lance">Dar lance!<i
+                        class="ri-auction-line button-icon"></i>
+                    <script>
+                        var btn = document.querySelector("#recarregar");
+                        btn.addEventListener("click", function () {
+
+                            setTimeout(function () {
+                                window.location.reload(1);
+                            }, 2300);
+                        });
+                    </script>
+                </button><br>
+
+                <div class="cad-produto">
+                    <p>Deseja cadastrar um produto?</p>
+                    <a class="link-produto"
+                        href="http://knock-cadastro-produto.s3-website-us-east-1.amazonaws.com">Clique aqui!</a>
+                </div>
 
                 <div class="resposta">
                     Resposta:
